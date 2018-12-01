@@ -1,67 +1,67 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:2:1-22:12
+ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:2:1-22:12
+INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:2:1-22:12
+INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:2:1-22:12
+INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:2:1-22:12
+INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:2:1-22:12
+INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:2:1-22:12
+INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:2:1-22:12
 	package
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:3:5-28
-		INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
-		INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:3:5-28
+		INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
+		INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:2:1-22:12
-		INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
+		INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:2:1-22:12
+		INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:2:1-22:12
-		INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
+		INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:2:1-22:12
+		INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:2:11-69
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:5:5-20:19
+ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:5:5-20:19
 	android:label
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:8:9-41
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:8:9-41
 	android:icon
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:7:9-45
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:7:9-45
 	android:allowBackup
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:6:9-35
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:9:9-40
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:9:9-40
 activity#com.rvrb.game.AndroidLauncher
-ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:10:9-19:20
+ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:10:9-19:20
 	android:screenOrientation
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:13:13-50
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:13:13-50
 	android:label
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:12:13-45
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:12:13-45
 	android:configChanges
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:14:13-107
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:14:13-107
 	android:name
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:11:13-57
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:11:13-57
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:15:13-18:29
+ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:15:13-18:29
 action#android.intent.action.MAIN
-ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:16:17-69
+ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:16:25-66
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:17:17-77
+ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:17:17-77
 	android:name
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml:17:27-74
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml:17:27-74
 uses-sdk
-INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
-INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
-INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
-INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
+INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
+INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
+INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
+INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
-		INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
+		INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
+		INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
-		ADDED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
-		INJECTED from /Users/slotheros/Desktop/AbyssGame/android/AndroidManifest.xml
+		INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
+		ADDED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
+		INJECTED from /Users/slotheros/git/abyss_game/android/AndroidManifest.xml
