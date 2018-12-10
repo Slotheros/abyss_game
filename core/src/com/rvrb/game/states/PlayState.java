@@ -14,6 +14,7 @@ public class PlayState extends State {
     private Submarine submarine;
     private Texture bg;
     private Array<Pillar> pillars;
+    private int score;
 
     public PlayState(GameStateManager gsm) {
         super(gsm);
@@ -21,6 +22,7 @@ public class PlayState extends State {
         cam.setToOrtho(false, Gdx.graphics.getWidth() / 4, Gdx.graphics.getHeight() / 4); // set the camera viewport
         bg = new Texture("underwater2.png");
         pillars = new Array<Pillar>();
+        score = 0;
 
         for(int p = 1; p <= PILLAR_COUNT; p++){
             pillars.add(new Pillar(p*(PILLAR_SPACING)+Pillar.PILLAR_WIDTH));
@@ -41,6 +43,8 @@ public class PlayState extends State {
         }
     }
 
+
+
     @Override
     public void update(float dt) {
         handleInput();
@@ -48,12 +52,21 @@ public class PlayState extends State {
         cam.position.x = submarine.getPosition().x + 80;
 
         for(Pillar pillar : pillars){
+            // if a pillar goes off the left side of the screen, reposition it.
             if(cam.position.x - (cam.viewportWidth/2) > pillar.getPosTopPillar().x + pillar.getTopPillar().getWidth()){
                 pillar.reposition(pillar.getPosTopPillar().x + ((Pillar.PILLAR_WIDTH + PILLAR_SPACING) * (PILLAR_COUNT-1)));
             }
 
+            // if the submarine collides with a pillar, end the run.
             if(pillar.collides(submarine.getBounds())){
-                gsm.set(new PlayState((gsm)));
+                gsm.set(new MenuState((gsm)));
+                break;
+            }
+
+            // if the submarine makes it through two pillars, score a point
+            if(!pillar.getScored() && submarine.getPosition().x > pillar.getPosTopPillar().x + submarine.getBounds().width) {
+                score += 1;
+                pillar.setScored(true);
             }
         }
 
@@ -78,6 +91,11 @@ public class PlayState extends State {
 
     @Override
     public void dispose() {
-
+        bg.dispose();
+        submarine.dispose();
+        for(Pillar pillar : pillars) {
+            pillar.dispose();
+        }
+        System.out.println("Play State Disposed");
     }
 }

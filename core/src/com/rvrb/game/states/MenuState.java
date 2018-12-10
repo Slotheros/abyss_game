@@ -12,8 +12,10 @@ public class MenuState extends State {
 
     public MenuState(GameStateManager gsm) {
         super(gsm);
+        cam.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight()); // set the camera viewport
         background = new Texture("menu.png");
         playButton = new Texture("playbtn.png");
+
     }
 
     @Override
@@ -21,7 +23,6 @@ public class MenuState extends State {
         // if the user presses the screen
         if (Gdx.input.justTouched()) {
             gsm.set(new PlayState(gsm));
-            dispose();
         }
     }
 
@@ -35,9 +36,8 @@ public class MenuState extends State {
      * Opens the SpriteBatch box
      */
     public void render(SpriteBatch sb) {
+        sb.setProjectionMatrix(cam.combined);
         sb.begin(); // opens the box
-        //sb.draw(background, 0, 0, AbyssGame.WIDTH, AbyssGame.HEIGHT); // draw background
-        //sb.draw(playButton, (AbyssGame.WIDTH / 2) - (playButton.getWidth() / 2), AbyssGame.HEIGHT / 2); // draw play button
         sb.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight()); // draw background
         sb.draw(playButton, (Gdx.graphics.getWidth() / 2) - (playButton.getWidth() / 2), Gdx.graphics.getHeight() / 2 - (playButton.getHeight() / 2)); // draw play button
         sb.end(); // close the box
@@ -50,5 +50,6 @@ public class MenuState extends State {
     public void dispose() {
         background.dispose();
         playButton.dispose();
+        System.out.println("Menu State Disposed");
     }
 }

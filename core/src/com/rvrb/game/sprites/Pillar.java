@@ -16,11 +16,13 @@ public class Pillar {
     private Vector2 posTopPillar, posBottomPillar;
     private Random rand;
     private Rectangle boundsTop, boundsBot;
+    private boolean scored;
 
     public Pillar(float x) {
         topPillar = new Texture("top_pillar.png");
         bottomPillar = new Texture("bot_pillar.png");
         rand = new Random();
+        scored = false;
 
         posTopPillar = new Vector2(x, rand.nextInt(FLUX) + PILLAR_GAP + LOWEST_OPENING);
         posBottomPillar = new Vector2(x, posTopPillar.y - PILLAR_GAP - bottomPillar.getHeight());
@@ -46,14 +48,24 @@ public class Pillar {
         return posBottomPillar;
     }
 
+    public Boolean getScored() { return scored; }
+
+    public void setScored(Boolean isScored) { this.scored = isScored; }
+
     public void reposition(float x){
         posTopPillar.set(x, rand.nextInt(FLUX) + PILLAR_GAP + LOWEST_OPENING);
         posBottomPillar.set(x, posTopPillar.y - PILLAR_GAP - bottomPillar.getHeight());
         boundsTop.setPosition(posTopPillar.x, posTopPillar.y);
         boundsBot.setPosition(posBottomPillar.x, posBottomPillar.y);
+        scored = false;
     }
 
     public boolean collides(Rectangle subRect){
         return subRect.overlaps(boundsTop) || subRect.overlaps(boundsBot);
+    }
+
+    public void dispose() {
+        topPillar.dispose();
+        bottomPillar.dispose();
     }
 }

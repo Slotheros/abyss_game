@@ -76,4 +76,8 @@ public class Submarine {
     public Rectangle getBounds(){
         return boundsSub;
     }
+
+    public void dispose() {
+        submarine.dispose();
+    }
 }

@@ -26,14 +26,14 @@ public class GameStateManager {
      * Removes the top state off the game state stack
      */
     public void pop() {
-        states.pop();
+        states.pop().dispose();
     }
 
     /**
      * Sets a new state to be added to the top of the game state stack
      */
     public void set(State state) {
-        states.pop();
+        states.pop().dispose();
         states.push(state);
     }
 
