@@ -12,7 +12,7 @@ public class MenuState extends State {
 
     public MenuState(GameStateManager gsm) {
         super(gsm);
-        background = new Texture("bg.png");
+        background = new Texture("menu.png");
         playButton = new Texture("playbtn.png");
     }
 
@@ -39,7 +39,7 @@ public class MenuState extends State {
         //sb.draw(background, 0, 0, AbyssGame.WIDTH, AbyssGame.HEIGHT); // draw background
         //sb.draw(playButton, (AbyssGame.WIDTH / 2) - (playButton.getWidth() / 2), AbyssGame.HEIGHT / 2); // draw play button
         sb.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight()); // draw background
-        sb.draw(playButton, (Gdx.graphics.getWidth() / 2) - (playButton.getWidth() / 2), Gdx.graphics.getHeight() / 2); // draw play button
+        sb.draw(playButton, (Gdx.graphics.getWidth() / 2) - (playButton.getWidth() / 2), Gdx.graphics.getHeight() / 2 - (playButton.getHeight() / 2)); // draw play button
         sb.end(); // close the box
     }
 

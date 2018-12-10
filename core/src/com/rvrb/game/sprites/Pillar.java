@@ -1,6 +1,7 @@
 package com.rvrb.game.sprites;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 import java.util.Random;
@@ -9,18 +10,24 @@ public class Pillar {
     private static final int FLUX = 100;
     private static final int PILLAR_GAP = 120;
     private static final int LOWEST_OPENING = 40;
+    public static final int PILLAR_WIDTH = 52;
 
     private Texture topPillar, bottomPillar;
     private Vector2 posTopPillar, posBottomPillar;
     private Random rand;
+    private Rectangle boundsTop, boundsBot;
 
     public Pillar(float x) {
-        topPillar = new Texture("toptube.png");
-        bottomPillar = new Texture("bottomtube.png");
+        topPillar = new Texture("top_pillar.png");
+        bottomPillar = new Texture("bot_pillar.png");
         rand = new Random();
 
         posTopPillar = new Vector2(x, rand.nextInt(FLUX) + PILLAR_GAP + LOWEST_OPENING);
         posBottomPillar = new Vector2(x, posTopPillar.y - PILLAR_GAP - bottomPillar.getHeight());
+
+        //for collision detection
+        boundsTop = new Rectangle(posTopPillar.x, posTopPillar.y, topPillar.getWidth(), topPillar.getHeight());
+        boundsBot = new Rectangle(posBottomPillar.x, posBottomPillar.y, bottomPillar.getWidth(), bottomPillar.getHeight());
     }
 
     public Texture getTopPillar() {
@@ -37,5 +44,16 @@ public class Pillar {
 
     public Vector2 getPosBottomPillar() {
         return posBottomPillar;
+    }
+
+    public void reposition(float x){
+        posTopPillar.set(x, rand.nextInt(FLUX) + PILLAR_GAP + LOWEST_OPENING);
+        posBottomPillar.set(x, posTopPillar.y - PILLAR_GAP - bottomPillar.getHeight());
+        boundsTop.setPosition(posTopPillar.x, posTopPillar.y);
+        boundsBot.setPosition(posBottomPillar.x, posBottomPillar.y);
+    }
+
+    public boolean collides(Rectangle subRect){
+        return subRect.overlaps(boundsTop) || subRect.overlaps(boundsBot);
     }
 }
