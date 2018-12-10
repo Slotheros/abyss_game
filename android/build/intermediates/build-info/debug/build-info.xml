@@ -5,8 +5,9 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.2.0"
-    timestamp="1544406078479"
+    timestamp="1544473335075"
     token="-7215845455657717325"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -18,14 +19,14 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="3" />
     <task
         name="verifier"
-        duration="0" />
+        duration="2" />
 
     <artifact
-        location="/Users/slotheros/git/abyss_game/android/build/intermediates/instant-run-apk/debug/android-debug.apk"
-        type="SPLIT_MAIN" />
+        location="/Users/slotheros/git/abyss_game/android/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
@@ -74,15 +75,6 @@
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1544405462782"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/slotheros/git/abyss_game/android/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
         timestamp="1544405941205"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
@@ -96,6 +88,15 @@
         <artifact
             location="/Users/slotheros/git/abyss_game/android/build/intermediates/instant-run-apk/debug/android-debug.apk"
             type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1544473335075"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/slotheros/git/abyss_game/android/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
     </build>
 
 </instant-run>

@@ -26,8 +26,8 @@ public class Pillar {
         posBottomPillar = new Vector2(x, posTopPillar.y - PILLAR_GAP - bottomPillar.getHeight());
 
         //for collision detection
-        boundsTop = new Rectangle(posTopPillar.x, posTopPillar.y, topPillar.getWidth(), topPillar.getHeight());
-        boundsBot = new Rectangle(posBottomPillar.x, posBottomPillar.y, bottomPillar.getWidth(), bottomPillar.getHeight());
+        boundsTop = new Rectangle(posTopPillar.x+10, posTopPillar.y, topPillar.getWidth()-10, topPillar.getHeight());
+        boundsBot = new Rectangle(posBottomPillar.x+10, posBottomPillar.y, bottomPillar.getWidth()-10, bottomPillar.getHeight());
     }
 
     public Texture getTopPillar() {
