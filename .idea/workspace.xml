@@ -13,18 +13,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/build-info/debug/build-info.xml" afterPath="$PROJECT_DIR$/android/build/intermediates/build-info/debug/build-info.xml" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental-verifier/debug/com/rvrb/game/sprites/Pillar.class" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental-verifier/debug/com/rvrb/game/sprites/Pillar.class" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental-verifier/debug/com/rvrb/game/sprites/Submarine.class" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental-verifier/debug/com/rvrb/game/sprites/Submarine.class" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/fCgi8and3ORd9IQ3t+i6Ds4sOEY=" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/fCgi8and3ORd9IQ3t+i6Ds4sOEY=" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJniLibs/zip-cache/fCgi8and3ORd9IQ3t+i6Ds4sOEY=" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJniLibs/zip-cache/fCgi8and3ORd9IQ3t+i6Ds4sOEY=" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/ir_slices/debug/package_slice_9/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/ir_slices/debug/package_slice_9/dex-renamer-state.txt" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/split-apk/debug/slices/slice_9.apk" afterPath="$PROJECT_DIR$/android/build/intermediates/split-apk/debug/slices/slice_9.apk" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/15/com/rvrb/game/sprites/Pillar.dex" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/15/com/rvrb/game/sprites/Pillar.dex" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/15/com/rvrb/game/sprites/Submarine.dex" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/15/com/rvrb/game/sprites/Submarine.dex" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/9/classes.dex" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/9/classes.dex" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/extractJars/debug/0/com/rvrb/game/sprites/Pillar.class" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/extractJars/debug/0/com/rvrb/game/sprites/Pillar.class" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/instantRun/debug/0/com/rvrb/game/sprites/Pillar.class" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/instantRun/debug/0/com/rvrb/game/sprites/Pillar.class" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/rvrb/game/sprites/Pillar.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/rvrb/game/sprites/Pillar.class" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/extractJars/debug/0/com/rvrb/game/sprites/Submarine.class" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/extractJars/debug/0/com/rvrb/game/sprites/Submarine.class" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/instantRun/debug/0/com/rvrb/game/sprites/Submarine.class" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/instantRun/debug/0/com/rvrb/game/sprites/Submarine.class" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/rvrb/game/sprites/Submarine.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/rvrb/game/sprites/Submarine.class" />
       <change beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/rvrb/game/sprites/Pillar.java" afterPath="$PROJECT_DIR$/core/src/com/rvrb/game/sprites/Pillar.java" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/rvrb/game/sprites/Submarine.java" afterPath="$PROJECT_DIR$/core/src/com/rvrb/game/sprites/Submarine.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pillar.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Pillar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/rvrb/game/sprites/Pillar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="28" column="92" lean-forward="false" selection-start-line="28" selection-start-column="92" selection-end-line="28" selection-end-column="92" />
+            <state relative-caret-position="375">
+              <caret line="29" column="99" lean-forward="false" selection-start-line="29" selection-start-column="99" selection-end-line="29" selection-end-column="99" />
               <folding />
             </state>
           </provider>
@@ -109,22 +109,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Submarine.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Submarine.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/rvrb/game/sprites/Submarine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-43">
-              <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+            <state relative-caret-position="255">
+              <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
               <folding>
-                <element signature="e#1318#1319#0" expanded="true" />
-                <element signature="e#1349#1350#0" expanded="true" />
-                <element signature="e#1445#1446#0" expanded="true" />
-                <element signature="e#1475#1476#0" expanded="true" />
-                <element signature="e#1501#1502#0" expanded="true" />
-                <element signature="e#1530#1531#0" expanded="true" />
-                <element signature="e#2006#2007#0" expanded="true" />
-                <element signature="e#2035#2036#0" expanded="true" />
-                <element signature="e#2070#2071#0" expanded="true" />
-                <element signature="e#2102#2103#0" expanded="true" />
+                <element signature="e#1322#1323#0" expanded="true" />
+                <element signature="e#1353#1354#0" expanded="true" />
+                <element signature="e#1449#1450#0" expanded="true" />
+                <element signature="e#1479#1480#0" expanded="true" />
+                <element signature="e#1505#1506#0" expanded="true" />
+                <element signature="e#1534#1535#0" expanded="true" />
+                <element signature="e#2010#2011#0" expanded="true" />
+                <element signature="e#2039#2040#0" expanded="true" />
+                <element signature="e#2074#2075#0" expanded="true" />
+                <element signature="e#2106#2107#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -3025,10 +3025,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/core/src/com/rvrb/game/states/State.java" />
-        <option value="$PROJECT_DIR$/core/src/com/rvrb/game/sprites/Submarine.java" />
         <option value="$PROJECT_DIR$/core/src/com/rvrb/game/states/PlayState.java" />
         <option value="$PROJECT_DIR$/core/src/com/rvrb/game/states/MenuState.java" />
         <option value="$PROJECT_DIR$/core/src/com/rvrb/game/sprites/Pillar.java" />
+        <option value="$PROJECT_DIR$/core/src/com/rvrb/game/sprites/Submarine.java" />
       </list>
     </option>
   </component>
@@ -3348,25 +3348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/rvrb/game/sprites/Submarine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-43">
-          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding>
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1349#1350#0" expanded="true" />
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1475#1476#0" expanded="true" />
-            <element signature="e#1501#1502#0" expanded="true" />
-            <element signature="e#1530#1531#0" expanded="true" />
-            <element signature="e#2006#2007#0" expanded="true" />
-            <element signature="e#2035#2036#0" expanded="true" />
-            <element signature="e#2070#2071#0" expanded="true" />
-            <element signature="e#2102#2103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/rvrb/game/states/PlayState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -3411,9 +3392,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/rvrb/game/sprites/Pillar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="28" column="92" lean-forward="false" selection-start-line="28" selection-start-column="92" selection-end-line="28" selection-end-column="92" />
+        <state relative-caret-position="375">
+          <caret line="29" column="99" lean-forward="false" selection-start-line="29" selection-start-column="99" selection-end-line="29" selection-end-column="99" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/rvrb/game/sprites/Submarine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+          <folding>
+            <element signature="e#1322#1323#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#1449#1450#0" expanded="true" />
+            <element signature="e#1479#1480#0" expanded="true" />
+            <element signature="e#1505#1506#0" expanded="true" />
+            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="e#2010#2011#0" expanded="true" />
+            <element signature="e#2039#2040#0" expanded="true" />
+            <element signature="e#2074#2075#0" expanded="true" />
+            <element signature="e#2106#2107#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

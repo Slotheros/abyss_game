@@ -7,7 +7,7 @@
     format="10"
     ir-eligibility="COMPATIBLE"
     plugin-version="3.2.0"
-    timestamp="1544473335075"
+    timestamp="1544473732747"
     token="-7215845455657717325"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -22,7 +22,7 @@
         duration="3" />
     <task
         name="verifier"
-        duration="2" />
+        duration="1" />
 
     <artifact
         location="/Users/slotheros/git/abyss_game/android/build/intermediates/split-apk/debug/slices/slice_9.apk"
@@ -92,7 +92,7 @@
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1544473335075"
+        timestamp="1544473732747"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/slotheros/git/abyss_game/android/build/intermediates/split-apk/debug/slices/slice_9.apk"

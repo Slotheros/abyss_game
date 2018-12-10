@@ -18,7 +18,7 @@ public class Submarine {
         position = new Vector3(x, y, 0);
         velocity = new Vector3(0, 0 ,0);
         submarine = new Texture("submarine.png");
-        boundsSub = new Rectangle(x, y, submarine.getWidth(), submarine.getHeight());
+        boundsSub = new Rectangle(x+5, y, submarine.getWidth()-5, submarine.getHeight());
     }
 
     public void update(float dt) {
