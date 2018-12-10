@@ -1,4 +1,1 @@
-#Sun Dec 09 20:39:01 EST 2018
-base.0=/Users/slotheros/git/abyss_game/android/build/intermediates/transforms/dexMerger/debug/7
-path.0=classes.dex
-renamed.0=classes.dex
+#Mon Dec 10 17:12:04 EST 2018

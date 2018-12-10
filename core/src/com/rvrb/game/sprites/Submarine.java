@@ -55,9 +55,6 @@ public class Submarine {
     }
 
     public void followTouch(int yTouchPos){
-        System.out.println("yTouchPos: " + yTouchPos);
-        System.out.println("subPos: " + position.y);
-        System.out.println("sub height" + submarine.getHeight());
         if((int)(position.y)+12 < yTouchPos){
             surfacing = -1;
         }

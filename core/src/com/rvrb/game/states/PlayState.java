@@ -1,7 +1,9 @@
 package com.rvrb.game.states;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
 import com.rvrb.game.sprites.Pillar;
@@ -10,11 +12,15 @@ import com.rvrb.game.sprites.Submarine;
 public class PlayState extends State {
     private static final int PILLAR_SPACING = 200;
     private static final int PILLAR_COUNT = 4;
+    private static final int SCORE_PADDING = 10;
+
 
     private Submarine submarine;
     private Texture bg;
     private Array<Pillar> pillars;
     private int score;
+    private String scoreString;
+    private BitmapFont scoreFont;
 
     public PlayState(GameStateManager gsm) {
         super(gsm);
@@ -23,6 +29,8 @@ public class PlayState extends State {
         bg = new Texture("underwater2.png");
         pillars = new Array<Pillar>();
         score = 0;
+        scoreString = "Score: 0";
+        scoreFont = new BitmapFont();
 
         for(int p = 1; p <= PILLAR_COUNT; p++){
             pillars.add(new Pillar(p*(PILLAR_SPACING)+Pillar.PILLAR_WIDTH));
@@ -43,14 +51,8 @@ public class PlayState extends State {
         }
     }
 
-
-
-    @Override
-    public void update(float dt) {
-        handleInput();
-        submarine.update(dt);
-        cam.position.x = submarine.getPosition().x + 80;
-
+    public void handlePillars() {
+        // loop through all created pillars
         for(Pillar pillar : pillars){
             // if a pillar goes off the left side of the screen, reposition it.
             if(cam.position.x - (cam.viewportWidth/2) > pillar.getPosTopPillar().x + pillar.getTopPillar().getWidth()){
@@ -59,8 +61,8 @@ public class PlayState extends State {
 
             // if the submarine collides with a pillar, end the run.
             if(pillar.collides(submarine.getBounds())){
-                gsm.set(new MenuState((gsm)));
-                break;
+                endGame();
+                return;
             }
 
             // if the submarine makes it through two pillars, score a point
@@ -69,7 +71,33 @@ public class PlayState extends State {
                 pillar.setScored(true);
             }
         }
+    }
 
+    public void endGame() {
+        // save score to shared preferences
+        //SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        Preferences pref = Gdx.app.getPreferences("Abyss");
+        if (pref.getInteger(("high score")) < score) {
+            pref.putInteger("high score", score);
+        }
+        pref.putInteger("points", pref.getInteger("points") + score);
+        // commit preferences changes
+        pref.flush();
+
+        System.out.println("High score is: " + pref.getInteger("high score"));
+        System.out.println("Total points are: " + pref.getInteger("points"));
+
+        // set the new game state
+        gsm.set(new GameoverState((gsm), score));
+    }
+
+    @Override
+    public void update(float dt) {
+        handleInput();
+        submarine.update(dt);
+        cam.position.x = submarine.getPosition().x + 80;
+        scoreString = "Score: " + score;
+        handlePillars();
         cam.update();
     }
 
@@ -86,6 +114,10 @@ public class PlayState extends State {
             sb.draw(pillar.getTopPillar(), pillar.getPosTopPillar().x, pillar.getPosTopPillar().y);
             sb.draw(pillar.getBottomPillar(), pillar.getPosBottomPillar().x, pillar.getPosBottomPillar().y);
         }
+        scoreFont.setUseIntegerPositions(false);
+        scoreFont.setColor(255, 255, 255, 1);
+        scoreFont.draw(sb, scoreString, cam.position.x - (cam.viewportWidth / 2) + SCORE_PADDING, cam.position.y + (cam.viewportHeight / 2) - SCORE_PADDING);
+
         sb.end(); // close the box
     }
 

@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/slotheros/git/abyss_game/android/build/intermediates/res/merged/debug/values_values.arsc.flat",
+            "outputFile": "C:\\Users\\Ryan\\Documents\\GitHub\\abyss_game\\android\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/slotheros/git/abyss_game/android/res/values/styles.xml",
+                    "source": "C:\\Users\\Ryan\\Documents\\GitHub\\abyss_game\\android\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "17",
+                        "startOffsets": "19",
                         "endLines": "9",
                         "endColumns": "12",
-                        "endOffsets": "475"
+                        "endOffsets": "484"
                     },
                     "to": {
                         "startLines": "3",
@@ -23,13 +23,13 @@
                     }
                 },
                 {
-                    "source": "/Users/slotheros/git/abyss_game/android/res/values/strings.xml",
+                    "source": "C:\\Users\\Ryan\\Documents\\GitHub\\abyss_game\\android\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
-                        "startOffsets": "56",
+                        "startOffsets": "59",
                         "endColumns": "46",
-                        "endOffsets": "98"
+                        "endOffsets": "101"
                     },
                     "to": {
                         "startLines": "2",
