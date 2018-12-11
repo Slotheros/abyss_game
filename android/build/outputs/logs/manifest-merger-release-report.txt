@@ -26,7 +26,7 @@ ADDED from C:\Users\Ryan\Documents\GitHub\abyss_game\android\AndroidManifest.xml
 	android:label
 		ADDED from C:\Users\Ryan\Documents\GitHub\abyss_game\android\AndroidManifest.xml:8:9-41
 	android:icon
-		ADDED from C:\Users\Ryan\Documents\GitHub\abyss_game\android\AndroidManifest.xml:7:9-45
+		ADDED from C:\Users\Ryan\Documents\GitHub\abyss_game\android\AndroidManifest.xml:7:9-43
 	android:allowBackup
 		ADDED from C:\Users\Ryan\Documents\GitHub\abyss_game\android\AndroidManifest.xml:6:9-35
 	android:theme
