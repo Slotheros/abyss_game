@@ -5,6 +5,7 @@ import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.rvrb.game.sprites.Pillar;
 import com.rvrb.game.sprites.Submarine;
@@ -13,12 +14,18 @@ public class PlayState extends State {
     private static final int PILLAR_SPACING = 200;
     private static final int PILLAR_COUNT = 4;
     private static final int SCORE_PADDING = 10;
-
+    private static final int GROUND_Y_OFFSET = -50;
+    private static final int SUBMARINE_START_POS = 200;
 
     private Submarine submarine;
     private Texture bg;
+    private float bgMove;
+    private Texture ground;
+    private Vector2 groundPos1, groundPos2;
+
     private Array<Pillar> pillars;
     private int score;
+    private int level;
     private String scoreString;
     private BitmapFont scoreFont;
 
@@ -26,9 +33,14 @@ public class PlayState extends State {
         super(gsm);
         submarine = new Submarine(50, 150);
         cam.setToOrtho(false, Gdx.graphics.getWidth() / 4, Gdx.graphics.getHeight() / 4); // set the camera viewport
-        bg = new Texture("underwater2.png");
+        bg = new Texture("underwater3.png");
+        ground = new Texture("ground.png");
+        groundPos1 = new Vector2(cam.position.x - cam.viewportWidth, GROUND_Y_OFFSET);
+        groundPos2 = new Vector2(cam.position.x - cam.viewportWidth + ground.getWidth(), GROUND_Y_OFFSET);
+
         pillars = new Array<Pillar>();
         score = 0;
+        level = 0;
         scoreString = "Score: 0";
         scoreFont = new BitmapFont();
 
@@ -91,14 +103,27 @@ public class PlayState extends State {
         gsm.set(new GameoverState((gsm), score));
     }
 
+    public void checkForLevelUp() {
+        if (score % 2 == 0 && score / 2 != level) {
+            submarine.levelUp();
+            for (Pillar pillar : pillars) {
+                pillar.levelUp();
+            }
+            level += 1;
+        }
+    }
+
     @Override
     public void update(float dt) {
         handleInput();
+        updateGround();
         submarine.update(dt);
-        cam.position.x = submarine.getPosition().x + 80;
+        cam.position.x = submarine.getPosition().x + SUBMARINE_START_POS;
         scoreString = "Score: " + score;
         handlePillars();
+        checkForLevelUp();
         cam.update();
+        bgMove += 0.1;
     }
 
     @Override
@@ -108,12 +133,14 @@ public class PlayState extends State {
     public void render(SpriteBatch sb) {
         sb.setProjectionMatrix(cam.combined);
         sb.begin(); // open the box
-        sb.draw(bg, cam.position.x - (cam.viewportWidth / 2), -100);
+        sb.draw(bg, cam.position.x - (cam.viewportWidth / 2) - bgMove, 45);
         sb.draw(submarine.getTexture(), submarine.getPosition().x, submarine.getPosition().y);
         for(Pillar pillar : pillars){
             sb.draw(pillar.getTopPillar(), pillar.getPosTopPillar().x, pillar.getPosTopPillar().y);
             sb.draw(pillar.getBottomPillar(), pillar.getPosBottomPillar().x, pillar.getPosBottomPillar().y);
         }
+        sb.draw(ground, groundPos1.x, groundPos1.y);
+        sb.draw(ground, groundPos2.x, groundPos2.y);
         scoreFont.setUseIntegerPositions(false);
         scoreFont.setColor(255, 255, 255, 1);
         scoreFont.draw(sb, scoreString, cam.position.x - (cam.viewportWidth / 2) + SCORE_PADDING, cam.position.y + (cam.viewportHeight / 2) - SCORE_PADDING);
@@ -129,5 +156,14 @@ public class PlayState extends State {
             pillar.dispose();
         }
         System.out.println("Play State Disposed");
+    }
+
+    private void updateGround() {
+        if (cam.position.x - (cam.viewportWidth /2) > groundPos1.x + ground.getWidth()) {
+            groundPos1.add(ground.getWidth() * 2, 0);
+        }
+        if (cam.position.x - (cam.viewportWidth /2) > groundPos2.x + ground.getWidth()) {
+            groundPos2.add(ground.getWidth() * 2, 0);
+        }
     }
 }

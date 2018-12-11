@@ -8,9 +8,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class GameoverState extends State {
 
     private Texture background;
-    private Texture playButton;
-    private String gameoverString = "GAME OVER";
-    private BitmapFont gameoverFont;
+    private Texture gameoverTitle;
+    private Texture restartIcon;
     private String scoreString;
     private BitmapFont scoreFont;
     private String hiscoreString;
@@ -18,21 +17,29 @@ public class GameoverState extends State {
 
     public GameoverState(GameStateManager gsm, int score) {
         super(gsm);
-        cam.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight()); // set the camera viewport
+        // set the camera viewport
+        cam.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+
+        // image textures
         background = new Texture("menu.png");
-        playButton = new Texture("playbtn.png");
+        gameoverTitle = new Texture("gameover_title.png");
+        restartIcon = new Texture("return.png");
+
+        // text strings and bitmap fonts
         scoreString = "Game Score: " + score;
         hiscoreString = "High Score: " + Gdx.app.getPreferences("Abyss").getInteger("high score");
-        gameoverFont = new BitmapFont();
         scoreFont = new BitmapFont();
         hiscoreFont = new BitmapFont();
     }
 
     @Override
+    /**
+     * handleInput is called during update, and deals with the user touching the screen
+     */
     public void handleInput() {
         // if the user presses the screen
         if (Gdx.input.justTouched()) {
-            gsm.set(new PlayState(gsm));
+            gsm.set(new MenuState(gsm));
         }
     }
 
@@ -43,28 +50,27 @@ public class GameoverState extends State {
 
     @Override
     /**
-     * Opens the SpriteBatch box
+     * Renders the images and texts on the page
      */
     public void render(SpriteBatch sb) {
         sb.setProjectionMatrix(cam.combined);
         sb.begin(); // opens the box
+
         sb.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight()); // draw background
-        sb.draw(playButton, Gdx.graphics.getWidth() * 3 / 4, Gdx.graphics.getHeight() / 2 - (playButton.getHeight() / 2)); // draw play button
+        sb.draw(restartIcon, Gdx.graphics.getWidth() / 2 - restartIcon.getWidth() / 2, cam.position.y - 500); // draw restart button
+        sb.draw(gameoverTitle, Gdx.graphics.getWidth() / 2 - gameoverTitle.getWidth() / 2, cam.position.y + 200); // draw gameover title
 
-        gameoverFont.setUseIntegerPositions(false);
-        gameoverFont.setColor(255, 255, 255, 1);
-        gameoverFont.getData().setScale(10);
-        gameoverFont.draw(sb, gameoverString, 100, cam.position.y + 200);
-
+        // game score text
         scoreFont.setUseIntegerPositions(false);
         scoreFont.setColor(255, 255, 255, 1);
         scoreFont.getData().setScale(8);
-        scoreFont.draw(sb, scoreString, 100, cam.position.y);
+        scoreFont.draw(sb, scoreString, Gdx.graphics.getWidth() / 2 - gameoverTitle.getWidth() / 2, cam.position.y + 100);
 
+        // high score text
         hiscoreFont.setUseIntegerPositions(false);
         hiscoreFont.setColor(255, 255, 255, 1);
         hiscoreFont.getData().setScale(8);
-        hiscoreFont.draw(sb, hiscoreString, 100, cam.position.y - 200);
+        hiscoreFont.draw(sb, hiscoreString, Gdx.graphics.getWidth() / 2 - gameoverTitle.getWidth() / 2, cam.position.y - 50);
 
         sb.end(); // close the box
     }
@@ -75,7 +81,8 @@ public class GameoverState extends State {
      */
     public void dispose() {
         background.dispose();
-        playButton.dispose();
+        restartIcon.dispose();
+        gameoverTitle.dispose();
         System.out.println("Menu State Disposed");
     }
 }
