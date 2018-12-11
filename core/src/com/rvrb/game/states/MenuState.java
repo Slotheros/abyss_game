@@ -10,7 +10,7 @@ import com.rvrb.game.AbyssGame;
  * and play button, that when pressed takes the user to the play state.
  */
 public class MenuState extends State {
-
+    // class variables representing game textures
     private Texture background;
     private Texture playButton;
     private Texture title;

@@ -9,15 +9,16 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.rvrb.game.states.GameStateManager;
 import com.rvrb.game.states.MenuState;
 
+/**
+ * The Abyss Game class extends the Gdx library's Application adapter class and overrides its
+ * create, render, and dispose methods. It plays the game music and creates the game state manager
+ * that contains the stack of states. It pushes the menu state to start the game.
+ */
 public class AbyssGame extends ApplicationAdapter {
-	public static final int WIDTH = 480;
-	public static final int HEIGHT = 800;
-	public static final String TITLE = "Into the Abyss";
-
+	// class variables representing the music, game state manager, and sprite batch
 	private Music music;
 	private GameStateManager gsm;
 	private SpriteBatch batch;
-	Texture img;
 
 	@Override
 	/**
@@ -47,11 +48,10 @@ public class AbyssGame extends ApplicationAdapter {
 	
 	@Override
 	/**
-	 *
+	 * Disposes of resources
 	 */
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
 		music.dispose();
 	}
 }

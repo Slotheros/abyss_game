@@ -10,52 +10,65 @@ import com.badlogic.gdx.utils.Array;
 import com.rvrb.game.sprites.Pillar;
 import com.rvrb.game.sprites.Submarine;
 
+/**
+ * The Play State represents the state of the game when the user is playing the game. It contains a
+ * background, ground, and a few texts and images. It has an instance of the submarine object and
+ * several instances of the pillar object. It also maintains the score of the game, and will
+ * transition to the gameover state once the player loses.
+ */
 public class PlayState extends State {
+    // class constants used to maintain the physical attributes of the game
     private static final int PILLAR_SPACING = 200;
     private static final int PILLAR_COUNT = 4;
     private static final int SCORE_PADDING = 10;
     private static final int GROUND_Y_OFFSET = -50;
     private static final int SUBMARINE_START_POS = 200;
 
+    // class variables representing the objects in the game
     private Submarine submarine;
     private Texture bg;
-    private float bgMove;
     private Texture ground;
-    private Vector2 groundPos1, groundPos2;
-
     private Array<Pillar> pillars;
+
+    // class variables representing the attributes of the game
+    private Vector2 groundPos1, groundPos2;
+    private float bgMove;
     private int score;
     private int level;
     private String scoreString;
     private BitmapFont scoreFont;
 
+    /**
+     * Play state constructor sets the cam and intializes the class variables
+     * @param gsm - game state manager contains the stack of states
+     */
     public PlayState(GameStateManager gsm) {
         super(gsm);
+
+        // initialize objects and variables
         submarine = new Submarine(50, 150);
         cam.setToOrtho(false, Gdx.graphics.getWidth() / 4, Gdx.graphics.getHeight() / 4); // set the camera viewport
         bg = new Texture("underwater3.png");
         ground = new Texture("ground.png");
         groundPos1 = new Vector2(cam.position.x - cam.viewportWidth, GROUND_Y_OFFSET);
         groundPos2 = new Vector2(cam.position.x - cam.viewportWidth + ground.getWidth(), GROUND_Y_OFFSET);
-
         pillars = new Array<Pillar>();
         score = 0;
         level = 0;
         scoreString = "Score: 0";
         scoreFont = new BitmapFont();
 
+        // add the pillars
         for(int p = 1; p <= PILLAR_COUNT; p++){
             pillars.add(new Pillar(p*(PILLAR_SPACING)+Pillar.PILLAR_WIDTH));
         }
     }
 
     @Override
+    /**
+     * Handles the user's interaction with the screen. Makes the submarine follow their finger
+     */
     protected void handleInput() {
-//        if (Gdx.input.isTouched()) {
-//            submarine.surface();
-//        } else {
-//            submarine.sink();
-//        }
         if(Gdx.input.isTouched()){
             submarine.followTouch((Gdx.graphics.getHeight() - Gdx.input.getY())/4);
         } else {
@@ -63,6 +76,10 @@ public class PlayState extends State {
         }
     }
 
+    /**
+     * This loops through all of the pillars and checks if they went off the screen, collided with
+     * the submarine, or got scored by the submarine passing them.
+     */
     public void handlePillars() {
         // loop through all created pillars
         for(Pillar pillar : pillars){
@@ -85,9 +102,12 @@ public class PlayState extends State {
         }
     }
 
+    /**
+     * End game is called when the submarine hits a pillar. It saves the score, and transitions the
+     * game to the gameover state
+     */
     public void endGame() {
         // save score to shared preferences
-        //SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         Preferences pref = Gdx.app.getPreferences("Abyss");
         if (pref.getInteger(("high score")) < score) {
             pref.putInteger("high score", score);
@@ -96,24 +116,33 @@ public class PlayState extends State {
         // commit preferences changes
         pref.flush();
 
-        System.out.println("High score is: " + pref.getInteger("high score"));
-        System.out.println("Total points are: " + pref.getInteger("points"));
-
         // set the new game state
         gsm.set(new GameoverState((gsm), score));
     }
 
+    /**
+     * This increases the difficulty of the game every two pillars
+     */
     public void checkForLevelUp() {
+        // if 2 pillars have been passed through and the game hasn't increased in difficulty yet
         if (score % 2 == 0 && score / 2 != level) {
+            // make the submarine move faster
             submarine.levelUp();
+
+            // make the gap between pillars smaller
             for (Pillar pillar : pillars) {
                 pillar.levelUp();
             }
+
+            // keep track of the difficulty level
             level += 1;
         }
     }
 
     @Override
+    /**
+     * Calls all functions that need to check, change, or update values
+     */
     public void update(float dt) {
         handleInput();
         updateGround();
@@ -128,7 +157,7 @@ public class PlayState extends State {
 
     @Override
     /**
-     * renders the sprite batch
+     * renders the sprite batch containing the submarine, pillars, background, ground, and score
      */
     public void render(SpriteBatch sb) {
         sb.setProjectionMatrix(cam.combined);
@@ -149,6 +178,9 @@ public class PlayState extends State {
     }
 
     @Override
+    /**
+     * disposes of texture resources
+     */
     public void dispose() {
         bg.dispose();
         submarine.dispose();
@@ -158,6 +190,9 @@ public class PlayState extends State {
         System.out.println("Play State Disposed");
     }
 
+    /**
+     * Makes the ground move alongside the pillars
+     */
     private void updateGround() {
         if (cam.position.x - (cam.viewportWidth /2) > groundPos1.x + ground.getWidth()) {
             groundPos1.add(ground.getWidth() * 2, 0);

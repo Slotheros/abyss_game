@@ -5,6 +5,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+/**
+ * The Gameover State represents the state of the game when the user loses. It contains a
+ * background and a few texts and images, including a return button that takes the user
+ * back to the menu state.
+ */
 public class GameoverState extends State {
 
     private Texture background;
@@ -15,6 +20,11 @@ public class GameoverState extends State {
     private String hiscoreString;
     private BitmapFont hiscoreFont;
 
+    /**
+     * Gameover constructor creates the cam and textures for the gameover page
+     * @param gsm - the game state manager that contains the stack of states
+     * @param score - the game score the user just ended on
+     */
     public GameoverState(GameStateManager gsm, int score) {
         super(gsm);
         // set the camera viewport
@@ -44,6 +54,9 @@ public class GameoverState extends State {
     }
 
     @Override
+    /**
+     * Calls all functions that need to change or update values
+     */
     public void update(float dt) {
         handleInput(); // checks for user input
     }

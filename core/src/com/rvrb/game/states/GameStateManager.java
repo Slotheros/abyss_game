@@ -4,6 +4,10 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.util.Stack;
 
+/**
+ * The game state manager holds all of the states of the game in a stack, and pushes/pops them
+ * on and off the stack when transitioning between states.
+ */
 public class GameStateManager {
 
     private Stack<State> states;
